@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import Resultado from "./Resultado"
+
 const Inicio =()=>{
 
   //Almacenamos la api en una variable
@@ -8,7 +10,7 @@ const Inicio =()=>{
   //Declaramos un estado con un array vacio ya que en el guardaremos la info que traigamos de la Api
   const [programas, setProgramas] = useState([])
   const [buscar, setBuscar] = useState('')
-
+  const [resultado, setResultado]= useState([])
   //Hacemos uso de useEffect para consumir la Api de tvMaze a penas se renderice el componente Inicio
   useEffect(()=>{
     //hacemos uso de una funcion asincrona para consumir la Api 
@@ -26,10 +28,14 @@ const Inicio =()=>{
   },[])
 
   const handleChange =(e)=>{
-    
     setBuscar(e.target.value)
   }
 
+  
+  const funcionBuscar =(buscar)=>{
+    setResultado(programas.filter(programa => programa.name.toLowerCase().includes(buscar.toLowerCase()) ))
+  }
+  console.log(resultado)
 
   // Procedemos a filtrar los programas que tengan un indice menor a 30 y se guardaran en una variable llamada programas30
   // para despues iterar este arreglo nuevo en el componente y solo mostrar 30 elementos
@@ -37,12 +43,14 @@ const Inicio =()=>{
 
     return(
       <div className="contenedor">
+
+        <Resultado resultado={resultado}/>    
         
         <div className="busqueda">
           <input type="text" 
           placeholder="Ingresa Serie o Pelicula"
           onChange={handleChange}/>
-          <button>Buscar</button>
+          <button onClick={()=> funcionBuscar(buscar)}>Buscar</button>
 
           <h3>El valor de buscar es: {buscar}</h3>
         </div>
@@ -59,7 +67,7 @@ const Inicio =()=>{
             ))
           }
         </div>
-
+          
       </div>
     )
    
