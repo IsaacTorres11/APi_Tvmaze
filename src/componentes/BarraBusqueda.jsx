@@ -10,13 +10,15 @@ const BarraBusqueda =({buscar})=>{
     console.log(busqueda)
 
     return(
-        <div>
+        <div className="contenedor-busqueda">
+            
             <label htmlFor="HTML">Realizar Busqueda</label>
-           <input type="text" 
-           placeholder="Ingresa Serie O Pelicula"
-           onChange={handleChange}/>
-           
-           <button onClick={()=> buscar(busqueda)}> Buscar </button>
+            <input type="text" 
+            placeholder="Ingresa Serie O Pelicula"
+            onChange={handleChange}
+            />
+            <button onClick={()=> buscar(busqueda)}> Buscar </button>
+        
         </div>
     )
 }
