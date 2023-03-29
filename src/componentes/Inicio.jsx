@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
-import Resultado from "./Resultado"
 
 const Inicio =()=>{
 
@@ -44,8 +44,7 @@ const Inicio =()=>{
     return(
       <div className="contenedor">
 
-        <Resultado resultado={resultado}/>    
-        
+        <h1>TvMaze</h1>
         <div className="busqueda">
           <input type="text" 
           placeholder="Ingresa Serie o Pelicula"
@@ -60,7 +59,7 @@ const Inicio =()=>{
             programas30.map((programa, indice)=>(
              <div className="programa" key={indice}>
               <div className="portada">
-                <img src={programa.image.medium} alt="" />
+                <Link to ={`/programa/${programa.id}`}> <img src={programa.image.medium} alt="" /> </Link>
               </div>
               <h2>{programa.name}</h2>
              </div>
