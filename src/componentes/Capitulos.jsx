@@ -34,9 +34,9 @@ const Capitulos =()=>{
             {
                 capitulos.map(capitulo=>(
                     <li key={capitulo.id}>
-                        <Link to ={`/${parametro.id}/elenco`}><img src={capitulo.image.medium} alt="" /></Link>
+                        <Link to ={`/${parametro.id}/elenco`}><img src={capitulo?.image?.medium} alt="" /></Link>
                         <h2>{capitulo.number} {capitulo.name}</h2>
-                        <h3>{removerHTMLTags(capitulo.summary)}</h3>
+                        {<div dangerouslySetInnerHTML={{ __html: capitulo.summary}} />}
                     </li>
                 ))
             }

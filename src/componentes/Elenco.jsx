@@ -27,6 +27,17 @@ const Elenco =()=>{
     return(
         <>
         <h3>Elenco</h3>
+        <div className="contenedor-elenco">
+            {
+               elenco.map(actor =>(
+                <div key ={actor.person.id} className ='actor'>
+                    <img src= {actor.person.image.medium} alt="" />
+                    <h3>Actor: {actor.person.name}</h3>
+                    <h4>Nacimiento:{actor.person.birthday}</h4>
+                </div>
+               )) 
+            }
+        </div>
         </>
     )
 }
