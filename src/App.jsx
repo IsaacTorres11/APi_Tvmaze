@@ -26,7 +26,7 @@ function App() {
            <Route path="/capitulos/:id" element={<Capitulos />} />
            <Route path="/:id/elenco" element ={<Elenco />}/>
 
-           <Route path="/programa/" element={<ProgramaDetallado />} />
+           <Route path="/acerca-de/" element={<ProgramaDetallado />} />
            <Route path="/personajes" element={< Personajes />} /> 
            
            <Route path="/*" element={<NotFound />} /> 

@@ -44,7 +44,7 @@ const Inicio =()=>{
   const programas30 = programas.filter((programa, indice) => indice < 30 )
 
     return(
-      <div className="contenedor">
+      <div className="container-sm container-md container-xl container-fluid pt-4 ">
 
         <h1>TvMaze</h1>
         <div className="busqueda">
@@ -54,14 +54,16 @@ const Inicio =()=>{
           onChange={handleChange}/>
         </div>
 
-        <div className="Programas">
+        <div className="Programas row mt-3">
           {
             filtroProgramas.map((programa, indice)=>(
-             <div className="programa" key={indice}>
+             <div className="programa col-sm" key={indice} >
               <div className="portada">
                 <Link to ={`/capitulos/${programa.id}`}><img src={programa.image.medium} alt="" /> </Link>
               </div>
-              <h2>{programa.name}</h2>
+              <div className="titulo-serie text-black text-center">
+                <h2 className=" h5">{programa.name}</h2>
+              </div> 
              </div>
             ))
           }

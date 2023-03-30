@@ -13,7 +13,7 @@ const Navegacion =()=>{
         <nav className="navbar navbar-dark bg-dark">
             <div className="container">
                 <NavLink className="btn btn-outline-primary" to='/'>Inicio</NavLink>
-                <NavLink className="btn btn-outline-primary" to='/programa/'>Programa</NavLink>
+                <NavLink className="btn btn-outline-primary" to='/acerca-de/'>Acerda De</NavLink>
                 <NavLink className="btn btn-outline-primary" to='/personajes'>Personajes</NavLink>
 
             </div>
