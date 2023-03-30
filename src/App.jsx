@@ -2,12 +2,14 @@
 import LayoutPublico from "./Layouts/LayoutPublico"
 import Navegacion from "./componentes/Navegacion"
 import Inicio from "./componentes/Inicio"
+import Capitulos from "./componentes/Capitulos"
 import ProgramaDetallado from "./componentes/ProgramaDetallado"
 import Personajes from "./componentes/Personajes"
 import NotFound from "./componentes/NotFound"
 
 //Importamos Route y Routes de react-router
 import { Route, Routes } from "react-router-dom"
+import Elenco from "./componentes/Elenco"
 
 
 function App() {
@@ -21,8 +23,12 @@ function App() {
         <Route path ='/' element={<LayoutPublico />}>
            <Route path="/" element={<Inicio />} />
            {/* con :id indicamos que esa ruta tendra un parametro  esto es una ruta con parametro*/}
-           <Route path="/programa/:id" element={<ProgramaDetallado />} />
+           <Route path="/capitulos/:id" element={<Capitulos />} />
+           <Route path="/:id/elenco" element ={<Elenco />}/>
+
+           <Route path="/programa/" element={<ProgramaDetallado />} />
            <Route path="/personajes" element={< Personajes />} /> 
+           
            <Route path="/*" element={<NotFound />} /> 
         </Route>
         
