@@ -12,9 +12,9 @@ const Navegacion =()=>{
     return(
         <nav className="navbar navbar-dark bg-dark">
             <div className="container">
-                <NavLink className="btn btn-outline-primary" to='/'>Inicio</NavLink>
-                <NavLink className="btn btn-outline-primary" to='/acerca-de/'>Acerda De</NavLink>
-                <NavLink className="btn btn-outline-primary" to='/personajes'>Personajes</NavLink>
+                <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/'>Inicio</NavLink>
+                <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/acerca-de/'>Acerda De</NavLink>
+                <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/personajes'>Personajes</NavLink>
 
             </div>
         </nav>

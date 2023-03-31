@@ -46,9 +46,10 @@ const Inicio =()=>{
     return(
       <div className="container-sm container-md container-xl container-fluid pt-4 ">
 
-        <h1>TvMaze</h1>
+        <h1 className="display-3 text-primary">TvMaze</h1>
         <div className="busqueda">
           <input type="text" 
+          className="form-control border-0 mt-5 mb-5 input-group-text "
           placeholder="Ingresa Serie o Pelicula"
           value={buscar}
           onChange={handleChange}/>
@@ -59,7 +60,7 @@ const Inicio =()=>{
             filtroProgramas.map((programa, indice)=>(
              <div className="programa col-sm" key={indice} >
               <div className="portada">
-                <Link to ={`/capitulos/${programa.id}`}><img src={programa.image.medium} alt="" /> </Link>
+                <Link to ={`/capitulos/${programa.id}`}><img src={programa.image.medium} className="rounded" alt="" /> </Link>
               </div>
               <div className="titulo-serie text-black text-center">
                 <h2 className=" h5">{programa.name}</h2>
