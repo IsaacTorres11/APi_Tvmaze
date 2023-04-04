@@ -1,0 +1,30 @@
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.Programas{
+    width: 90%;
+    margin: auto;
+}
+
+.actor{
+    width: 19%;
+}
+
+.texto-acerca{
+    line-height: 44px;
+}
+
+.error{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.mensaje-error{
+	font-size: 10rem;
+}

@@ -28,19 +28,22 @@ const Capitulos =()=>{
 
  return (
     <div>
-        <h2>capitulos</h2>
+        <h2 className="text-center mt-5">Capitulos</h2>
         <div className="capitulos">
-            <ul>
-            {
+        {
                 capitulos.map(capitulo=>(
-                    <li key={capitulo.id}>
-                        <Link to ={`/${parametro.id}/elenco`}><img src={capitulo?.image?.medium} alt="" /></Link>
-                        <h2>{capitulo.number} {capitulo.name}</h2>
-                        {<div dangerouslySetInnerHTML={{ __html: capitulo.summary}} />}
-                    </li>
+                    <div className="contenedor-capitulo d-flex w-100 m-4 border-3 border-primary-subtle border-bottom" key={capitulo.id}>
+                        <div className="imagen-capitulo w-25 p-1 "> 
+                           <Link to ={`/${parametro.id}/elenco`}><img className="w-100 rounded" src={capitulo?.image?.medium} alt="" /></Link>
+                        </div>
+                        <div className="info-capitulo w-75 px-2 border-3 border-start border-primary-subtle">
+                            <h2> {capitulo.number} {capitulo.name}</h2>
+                            {<div dangerouslySetInnerHTML={{ __html: capitulo.summary}} />}
+                        </div>
+                        
+                    </div>
                 ))
             }
-            </ul>
         </div>
     </div>
  )   

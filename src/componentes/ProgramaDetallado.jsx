@@ -1,10 +1,10 @@
 const ProgramaDetallado =()=>{
     
     return(
-        <div className="container contenedor-acerca-de bg-secundary ">
-            <h2 className="text-center">Acerca de TvMaze</h2>
+        <div className="container contenedor-acerca-de bg-secundary m-5 w-100 m-auto">
+            <h2 className="text-center h2 m-5 text-xl">Acerca de TvMaze</h2>
 
-            <p>
+            <p className="h3 texto-acerca">
                 Lorem Ipsum is simply dummy text of the printing and 
                 typesetting industry. Lorem Ipsum has been the industry's 
                 standard dummy text ever since the 1500s, when an unknown 
@@ -17,7 +17,7 @@ const ProgramaDetallado =()=>{
                 PageMaker including versions of Lorem Ipsum
             </p>        
 
-            <p>
+            <p className="h3 texto-acerca">
                 Contrary to popular belief, Lorem Ipsum is not simply random text. 
                 It has roots in a piece of classical Latin literature from 45 BC, 
                 making it over 2000 years old. Richard McClintock, a 

@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -49,26 +50,28 @@ const Inicio =()=>{
         <h1 className="display-3 text-primary">TvMaze</h1>
         <div className="busqueda">
           <input type="text" 
-          className="form-control border-0 mt-5 mb-5 input-group-text "
+          className="form-control border-0 mt-5 mb-5 input-group-text p-3"
           placeholder="Ingresa Serie o Pelicula"
           value={buscar}
           onChange={handleChange}/>
         </div>
 
-        <div className="Programas row mt-3">
-          {
-            filtroProgramas.map((programa, indice)=>(
-             <div className="programa col-sm" key={indice} >
-              <div className="portada">
-                <Link to ={`/capitulos/${programa.id}`}><img src={programa.image.medium} className="rounded" alt="" /> </Link>
+        <Suspense fallback={<h2>Cargando...</h2>}>
+          <div className="Programas d-flex flex-wrap justify-content-around"> 
+            {
+              filtroProgramas.map((programa, indice)=>(
+              <div className="programa m-2" key={indice} > 
+                <div className="portada mx-auto">
+                  <Link to ={`/capitulos/${programa.id}`}> <img  src={programa.image.medium} className=" rounded w-100 h-100" alt="" /> </Link>
+                </div>
+                <div className="titulo-serie text-black text-center">
+                  <h2 className=" h5">{programa.name}</h2>
+                </div> 
               </div>
-              <div className="titulo-serie text-black text-center">
-                <h2 className=" h5">{programa.name}</h2>
-              </div> 
-             </div>
-            ))
-          }
-        </div>
+              ))
+            }
+          </div>
+        </Suspense>
           
       </div>
     )

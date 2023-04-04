@@ -14,7 +14,6 @@ const Navegacion =()=>{
             <div className="container">
                 <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/'>Inicio</NavLink>
                 <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/acerca-de/'>Acerda De</NavLink>
-                <NavLink className="btn btn-outline-primary btn-lg mb-3 mt-3" to='/personajes'>Personajes</NavLink>
 
             </div>
         </nav>
